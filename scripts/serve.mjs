@@ -17,7 +17,10 @@ const types = {
   '.jpg': 'image/jpeg',
   '.webp': 'image/webp',
   '.ico': 'image/x-icon',
-  '.json': 'application/json; charset=utf-8'
+  '.json': 'application/json; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
+  '.webmanifest': 'application/manifest+json; charset=utf-8'
 };
 
 createServer(async (req, res) => {
@@ -31,7 +34,19 @@ createServer(async (req, res) => {
     if (!file.startsWith(base) && !file.startsWith(resolve(root, 'src')) && !file.startsWith(publicDir)) throw new Error('forbidden');
     let info = await stat(file).catch(() => null);
     if (info?.isDirectory()) { file = join(file, 'index.html'); info = await stat(file).catch(() => null); }
-    if (!info) { res.writeHead(404, { 'content-type': 'text/plain' }); res.end('not found'); return; }
+    if (!info) {
+      // 与生产一致：无扩展名的未知路径回退首页，静态资源仍返回 404
+      if (!extname(file)) {
+        const index = join(base, 'index.html');
+        const body = await readFile(index);
+        res.writeHead(200, { 'content-type': types['.html'], 'cache-control': 'no-store' });
+        res.end(body);
+        return;
+      }
+      res.writeHead(404, { 'content-type': 'text/plain' });
+      res.end('not found');
+      return;
+    }
     const body = await readFile(file);
     res.writeHead(200, {
       'content-type': types[extname(file)] || 'application/octet-stream',

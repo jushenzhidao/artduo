@@ -60,6 +60,14 @@ body.is-locked { overflow: hidden; }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+/* 键盘焦点统一为朱砂色细环；鼠标点击不触发，避免视觉噪声 */
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.work:focus-visible { outline-offset: 6px; }
 ::selection { background: var(--red); color: #fff; }
 
 .skip-link {
