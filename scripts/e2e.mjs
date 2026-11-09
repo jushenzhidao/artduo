@@ -115,8 +115,10 @@ check('canonical 指向自身', /rel="canonical"[^>]+https:\/\/artduo\.1task\.cn
 check('OG 站点地址', /property="og:url"/.test(home.text),
   home.text.match(/property="og:url"[\s\S]{0,60}?content="([^"]*)"/)?.[1] || '(缺失)');
 check('favicon 声明', /rel="icon"[^>]+favicon\.svg/.test(home.text));
-check('样式表引用', /href="\/src\/style\.css"/.test(home.text));
-check('模块脚本引用', /type="module"[^>]+src="\/src\/main\.js"/.test(home.text));
+const cssHref = home.text.match(/href="(\/src\/style\.css[^"]*)"/)?.[1] || '';
+const jsSrc = home.text.match(/src="(\/src\/main\.js[^"]*)"/)?.[1] || '';
+check('样式表引用带版本号', /\/src\/style\.css\?v=[\w.-]+/.test(cssHref), cssHref || '(缺失)');
+check('模块脚本引用带版本号', /\/src\/main\.js\?v=[\w.-]+/.test(jsSrc), jsSrc || '(缺失)');
 check('作品网格容器存在', /id="workGrid"/.test(home.text));
 const filterCount = (home.text.match(/class="filter[ "]/g) || []).length;
 check('筛选器 4 个', filterCount === 4, `${filterCount} 个`);
@@ -148,6 +150,12 @@ const htmlRefs = [...home.text.matchAll(/(?:href|src)="(\/[^"#?]+)"/g)].map((m) 
 const missingRefs = [...new Set(htmlRefs)].filter((p) => !assetInfo[p] && !/\/(works)\//.test(p));
 check('HTML 内引用均有响应', missingRefs.length === 0, missingRefs.join(', ') || `${new Set(htmlRefs).size} 条`);
 
+if (cssHref.includes('?')) {
+  const versionedCss = await get(cssHref);
+  check('版本化 CSS 与源文件一致',
+    versionedCss.status === 200 && versionedCss.body.length === assetInfo['/src/style.css'].bytes,
+    `HTTP ${versionedCss.status} · ${versionedCss.body.length}B`);
+}
 const jsText = (await get('/src/main.js')).text;
 const jsWorks = (jsText.match(/\bno:\s*'?\d+'?/g) || []).length;
 check('脚本内作品数据 6 条', jsWorks >= 6, `${jsWorks} 条`);

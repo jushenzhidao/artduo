@@ -47,7 +47,11 @@ createServer(async (req, res) => {
       res.end('not found');
       return;
     }
-    const body = await readFile(file);
+    let body = await readFile(file);
+    if (extname(file) === '.html') {
+      // 开发时没有构建步骤，用 dev 占位，保持与生产相同的 URL 形状
+      body = Buffer.from(body.toString('utf8').replaceAll('__ASSET_V__', 'dev'));
+    }
     res.writeHead(200, {
       'content-type': types[extname(file)] || 'application/octet-stream',
       'cache-control': distMode ? 'public, max-age=300' : 'no-store'
