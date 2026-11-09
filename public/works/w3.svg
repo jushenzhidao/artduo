@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" width="900" height="1125" role="img" aria-labelledby="t">
+<title id="t">Paper Memory 03</title>
+<defs>
+  <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 .18"/></feComponentTransfer>
+  </filter>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="70"/></filter>
+  <filter id="soft2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="18"/></filter>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".35"/></filter>
+  
+</defs>
+<rect width="900" height="1125" fill="#0b0b0c"/><g transform="translate(122 190) rotate(-7)"><polygon points="0,0 478,0 520,70 499,294 520,490 468,700 182,679 0,630" fill="#efe7da" opacity="1" filter="url(#shadow)"/></g><g transform="translate(300 330) rotate(5)"><polygon points="0,0 432,0 470,62 451,260 470,434 423,620 164,601 0,558" fill="#f0bfb4" opacity="0.96" filter="url(#shadow)"/></g><g transform="translate(390 120) rotate(12)"><polygon points="0,0 202,0 220,84 211,353 220,588 198,840 77,815 0,756" fill="#ff4a2e" opacity="0.94" filter="url(#shadow)"/></g><line x1="90" y1="1010" x2="810" y2="1010" stroke="#efe7da" stroke-width="1" opacity=".35"/><text x="42" y="1087" fill="#efe7da" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" letter-spacing="2" opacity=".62">PAPER MEMORY / 03</text>
+<rect width="900" height="1125" filter="url(#grain)" opacity=".55" style="mix-blend-mode:overlay"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 820" width="620" height="820" role="img" aria-labelledby="t">
+<title id="t">Qiao — image and memory</title>
+<defs>
+  <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 .18"/></feComponentTransfer>
+  </filter>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="70"/></filter>
+  <filter id="soft2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="18"/></filter>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".35"/></filter>
+  
+</defs>
+<rect width="620" height="820" fill="#efe7da"/><ellipse cx="410" cy="360" rx="210" ry="250" fill="#0b0b0c" opacity=".92" filter="url(#soft2)"/><path d="M80 620 C220 480 360 760 540 560" fill="none" stroke="#ff4a2e" stroke-width="3"/><circle cx="152" cy="240" r="54" fill="#ff4a2e"/><text x="40" y="788" fill="#0b0b0c" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" letter-spacing="2" opacity=".62">QIAO — IMAGE / MEMORY</text>
+<rect width="620" height="820" filter="url(#grain)" opacity=".55" style="mix-blend-mode:overlay"/>
+</svg>

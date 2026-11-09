@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARTDUO — 柔软机械 / Soft Machines</title>
+  <meta name="description" content="ARTDUO 是 LIN 与 QIAO 的双人艺术现场。首展「柔软机械」：六件作品，两个视角，一个现场。">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta property="og:title" content="ARTDUO — 柔软机械 / Soft Machines">
+  <meta property="og:description" content="两个视角，一个现场。LIN × QIAO 双人展，2026—2027。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/og.svg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      const q = new URLSearchParams(location.search).get('theme');
+      const saved = localStorage.getItem('artduo-theme');
+      document.documentElement.dataset.theme = (q === 'light' || q === 'dark') ? q : (saved || 'dark');
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#works">跳到作品</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span></span></div>
+
+  <header class="site-head" id="siteHead">
+    <a class="brand" href="#top" aria-label="ARTDUO 首页">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-name">ARTDUO</span>
+    </a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="#works">作品</a>
+      <a href="#duo">双人</a>
+      <a href="#visit">展览</a>
+    </nav>
+    <div class="head-actions">
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="切换明暗主题">LIGHT</button>
+      <a class="ticket" href="#visit">进入现场 <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-kicker" data-reveal>
+        <span><i class="live-dot" aria-hidden="true"></i> ONLINE EXHIBITION 01</span>
+        <span>2026 — 2027</span>
+      </div>
+
+      <h1 class="hero-title" id="heroTitle" aria-label="ARTDUO">
+        <span class="title-line" data-reveal>ART</span>
+        <span class="title-line outline" data-reveal>DUO</span>
+      </h1>
+
+      <div class="hero-grid">
+        <div class="hero-copy" data-reveal>
+          <p class="hero-cn">两个视角，一个现场。</p>
+          <p class="lede">LIN 与 QIAO 的双人展「柔软机械」：身体、材料与图像在同一房间里互相折叠。</p>
+          <a class="text-link" href="#works">进入展厅 <span aria-hidden="true">↓</span></a>
+        </div>
+
+        <figure class="hero-art" data-reveal>
+          <div class="hero-art-frame">
+            <img src="/works/w5.svg" alt="ARTDUO 展览主视觉：红色与米色两个交叠的圆形" width="900" height="1125">
+          </div>
+          <figcaption><span>DUET, 2026</span><span>生成式 SVG / 尺寸可变</span></figcaption>
+        </figure>
+
+        <dl class="hero-meta" data-reveal>
+          <div><dt>展览</dt><dd>柔软机械<br><em>Soft Machines</em></dd></div>
+          <div><dt>艺术家</dt><dd>LIN × QIAO</dd></div>
+          <div><dt>展期</dt><dd>2026.11.09 — 2027.01.31</dd></div>
+          <div><dt>现场</dt><dd>ONLINE<br><em>ARTDUO.1TASK.CN</em></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>TWO PRACTICES · ONE ROOM</span><span class="star">✳</span>
+        <span>SOFT MACHINES</span><span class="star">✳</span>
+        <span>两个视角 · 一个现场</span><span class="star">✳</span>
+        <span>LIN × QIAO</span><span class="star">✳</span>
+        <span>TWO PRACTICES · ONE ROOM</span><span class="star">✳</span>
+        <span>SOFT MACHINES</span><span class="star">✳</span>
+        <span>两个视角 · 一个现场</span><span class="star">✳</span>
+        <span>LIN × QIAO</span><span class="star">✳</span>
+      </div>
+    </div>
+
+    <section class="section works" id="works" aria-labelledby="worksTitle">
+      <header class="section-head" data-reveal>
+        <span class="section-index">01</span>
+        <h2 id="worksTitle">作品 <em>Works</em></h2>
+        <p>六件作品，三种视角：LIN 的材料、QIAO 的图像，以及两个人共同完成的现场。</p>
+      </header>
+
+      <div class="filters" role="group" aria-label="按艺术家筛选" data-reveal>
+        <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">全部 <span>06</span></button>
+        <button class="filter" type="button" data-filter="lin" aria-pressed="false">LIN <span>02</span></button>
+        <button class="filter" type="button" data-filter="qiao" aria-pressed="false">QIAO <span>02</span></button>
+        <button class="filter" type="button" data-filter="duo" aria-pressed="false">DUO <span>02</span></button>
+      </div>
+
+      <div class="work-grid" id="workGrid"></div>
+      <p class="work-empty" id="workEmpty" hidden>这个视角下暂无作品。</p>
+    </section>
+
+    <section class="section duo" id="duo" aria-labelledby="duoTitle">
+      <header class="section-head" data-reveal>
+        <span class="section-index">02</span>
+        <h2 id="duoTitle">双人 <em>The Duo</em></h2>
+        <p>不是两个人各做一半，而是两种方法在同一张桌上互相修正。</p>
+      </header>
+
+      <div class="duo-grid">
+        <article class="artist artist-lin" data-reveal>
+          <figure>
+            <img src="/works/lin.svg" alt="LIN 的抽象肖像：深色背景上的米色笔触与红色圆点" width="620" height="820" loading="lazy">
+          </figure>
+          <div class="artist-copy">
+            <div class="artist-head"><h3>LIN</h3><span>材料 / 光线</span></div>
+            <p>“我把材料当作时间的容器。折叠、拉伸、留下折痕——作品不解释自己，它只是持续地变形。”</p>
+            <ul>
+              <li>2026 「Soft Machines」ARTDUO，线上</li>
+              <li>2025 「After Image」群展，上海</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="artist artist-qiao" data-reveal>
+          <figure>
+            <img src="/works/qiao.svg" alt="QIAO 的抽象肖像：米色背景上的深色柔焦形体与红色曲线" width="620" height="820" loading="lazy">
+          </figure>
+          <div class="artist-copy">
+            <div class="artist-head"><h3>QIAO</h3><span>图像 / 记忆</span></div>
+            <p>“图像不是窗口，是一层残留。我关心的是看过之后还剩下什么，而不是它当时有多清楚。”</p>
+            <ul>
+              <li>2026 「Soft Machines」ARTDUO，线上</li>
+              <li>2025 「信号花园」个人项目，杭州</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section visit" id="visit" aria-labelledby="visitTitle">
+      <div class="visit-quote" data-reveal>
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <blockquote>机器并不柔软。<br>柔软的是我们看它的方式。</blockquote>
+      </div>
+
+      <div class="visit-info" data-reveal>
+        <span class="section-index">03</span>
+        <h2 id="visitTitle">展览 <em>Visit</em></h2>
+        <dl class="info-list">
+          <div><dt>展期</dt><dd>2026.11.09 — 2027.01.31</dd></div>
+          <div><dt>现场</dt><dd>ONLINE / 24H</dd></div>
+          <div><dt>地址</dt><dd>artduo.1task.cn</dd></div>
+          <div><dt>联系</dt><dd><a href="mailto:hello@artduo.1task.cn">hello@artduo.1task.cn</a></dd></div>
+        </dl>
+        <a class="cta" href="mailto:hello@artduo.1task.cn?subject=ARTDUO%20%C2%B7%20Soft%20Machines">预约导览 <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="foot-brand">ARTDUO<sup>®</sup></div>
+    <div class="foot-meta">
+      <span>© 2026 ARTDUO</span>
+      <span>LIN × QIAO</span>
+      <a href="#top">回到顶部 ↑</a>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lbTitle">
+    <button class="lb-close" id="lbClose" type="button" aria-label="关闭">关闭 <span aria-hidden="true">×</span></button>
+    <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="上一件">←</button>
+    <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="下一件">→</button>
+    <div class="lb-inner">
+      <figure class="lb-figure">
+        <img id="lbImage" src="" alt="">
+      </figure>
+      <div class="lb-copy">
+        <span class="lb-index" id="lbIndex">01 / 06</span>
+        <h2 id="lbTitle"></h2>
+        <p class="lb-cn" id="lbCn"></p>
+        <dl>
+          <div><dt>艺术家</dt><dd id="lbArtist"></dd></div>
+          <div><dt>年份</dt><dd id="lbYear"></dd></div>
+          <div><dt>媒介</dt><dd id="lbMedium"></dd></div>
+          <div><dt>尺寸</dt><dd id="lbSize"></dd></div>
+        </dl>
+        <p class="lb-note" id="lbNote"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
