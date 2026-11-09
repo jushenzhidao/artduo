@@ -50,6 +50,21 @@ node-10 上只需要：
 
 部署用户 `artduo` 在 `docker` 组内，只能操作自己的 compose 项目；GitHub Actions 使用专用 ed25519 key，不复用运维 fleet key。
 
+## 端到端验收
+
+```bash
+# HTTP 层：状态码、资源、缓存、压缩、安全头、TLS、跳转、体积
+node scripts/e2e.mjs --base https://artduo.1task.cn
+
+# 本机无公网直连时，可走隧道并指定解析地址
+node scripts/e2e.mjs --base https://artduo.1task.cn:8446 --resolve-to 127.0.0.1
+
+# 浏览器层（本地辅助脚本，需 Chrome 远程调试端口）
+python3 qa/e2e-browser.py --port 9453 --base https://artduo.1task.cn:8446
+```
+
+`scripts/e2e.mjs` 零依赖，失败会以非零状态退出，适合放进 CI 做发布后验收。
+
 ## 手动部署
 
 ```bash

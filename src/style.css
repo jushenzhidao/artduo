@@ -188,7 +188,7 @@ html[data-theme="light"] .title-line.outline { -webkit-text-stroke-color: var(--
 .hero-art { margin: 0; }
 .hero-art-frame { position: relative; overflow: hidden; border: 1px solid var(--line); background: var(--bg-2); box-shadow: 0 40px 100px rgba(0,0,0,.35); }
 .hero-art-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(255,255,255,.1), transparent 35%); pointer-events: none; }
-.hero-art img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform 1.2s var(--spring); }
+.hero-art img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; transition: transform 1.2s var(--spring); }
 .hero-art:hover img { transform: scale(1.035); }
 .hero-art figcaption { display: flex; justify-content: space-between; gap: 12px; padding-top: 10px; color: var(--ink-3); font-family: var(--mono); font-size: 9px; letter-spacing: .08em; }
 
