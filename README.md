@@ -3,7 +3,7 @@
 **两个视角，一个现场。** ARTDUO 是 LIN 与 QIAO 的双人线上艺术现场，首展「柔软机械 / Soft Machines」。
 
 - 线上入口：<https://artduo.1task.cn>
-- 镜像：`ghcr.io/jushenzhidao/artduo`
+- 镜像：`ghcr.io/jushenzhidao/artduo`（public，节点无需 docker login）
 - 部署：node-10 / Docker Compose（127.0.0.1:39120，nginx 反代 + Let's Encrypt）
 
 ## 本地开发
