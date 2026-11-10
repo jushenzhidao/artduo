@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="商品图场景合成"><defs><linearGradient id="bg" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#3a2413"/><stop offset="100%" stop-color="#a8702f"/></linearGradient><linearGradient id="obj" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#ffd79b"/><stop offset="100%" stop-color="#ffe4ae"/></linearGradient><radialGradient id="light"><stop offset="0%" stop-color="#ffe4ae" stop-opacity="0.55"/><stop offset="100%" stop-color="#ffe4ae" stop-opacity="0"/></radialGradient><radialGradient id="halo"><stop offset="0%" stop-color="#3a2413" stop-opacity="0.9"/><stop offset="100%" stop-color="#3a2413" stop-opacity="0"/></radialGradient><radialGradient id="deep"><stop offset="0%" stop-color="#0b5c7a" stop-opacity="0"/><stop offset="100%" stop-color="#041a2e" stop-opacity=".75"/></radialGradient><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".14"/></feComponentTransfer></filter><filter id="soft"><feGaussianBlur stdDeviation="34"/></filter></defs><rect width="600" height="600" fill="url(#bg)"/><ellipse cx="140" cy="120" rx="230" ry="200" fill="url(#light)" opacity=".55" filter="url(#soft)"/><ellipse cx="500" cy="520" rx="230" ry="200" fill="url(#halo)" opacity=".5" filter="url(#soft)"/>
+      <ellipse cx="300" cy="470" rx="200" ry="34" fill="#000" opacity=".28"/>
+      <path d="M0 430 Q150 398 300 424 T600 416 V600 H0Z" fill="#20140c" opacity=".55"/>
+      <rect x="252" y="196" width="96" height="238" rx="12" fill="url(#obj)" opacity=".95"/>
+      <rect x="272" y="168" width="56" height="40" rx="8" fill="#f3d9a4" opacity=".9"/>
+      <rect x="286" y="146" width="28" height="28" rx="6" fill="#fff0cf" opacity=".95"/>
+      <rect x="264" y="238" width="72" height="112" rx="4" fill="#fff" opacity=".13"/>
+      <path d="M252 300 Q300 288 348 300" stroke="#fff3d6" stroke-width="2" opacity=".45" fill="none"/>
+      <text x="300" y="346" text-anchor="middle" font-family="Georgia,serif" font-size="17" letter-spacing="5" fill="#fff4dd" opacity=".85">AURUM</text>
+      <circle cx="168" cy="188" r="7" fill="#ffe9b5" opacity=".7"/>
+      <circle cx="436" cy="146" r="4" fill="#ffe9b5" opacity=".6"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity=".5" style="mix-blend-mode:overlay"/></svg>

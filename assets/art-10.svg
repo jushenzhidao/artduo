@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="水母在海底遨游"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#06243d"/><stop offset="100%" stop-color="#0b5c7a"/></linearGradient><linearGradient id="obj" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#5fd8e8"/><stop offset="100%" stop-color="#c6f4ff"/></linearGradient><radialGradient id="light"><stop offset="0%" stop-color="#c6f4ff" stop-opacity="0.55"/><stop offset="100%" stop-color="#c6f4ff" stop-opacity="0"/></radialGradient><radialGradient id="halo"><stop offset="0%" stop-color="#06243d" stop-opacity="0.9"/><stop offset="100%" stop-color="#06243d" stop-opacity="0"/></radialGradient><radialGradient id="deep"><stop offset="0%" stop-color="#0b5c7a" stop-opacity="0"/><stop offset="100%" stop-color="#041a2e" stop-opacity=".75"/></radialGradient><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".14"/></feComponentTransfer></filter><filter id="soft"><feGaussianBlur stdDeviation="34"/></filter></defs><rect width="600" height="600" fill="url(#bg)"/><ellipse cx="140" cy="120" rx="230" ry="200" fill="url(#light)" opacity=".55" filter="url(#soft)"/><ellipse cx="500" cy="520" rx="230" ry="200" fill="url(#halo)" opacity=".5" filter="url(#soft)"/>
+      <g opacity=".9">
+        <ellipse cx="300" cy="212" rx="88" ry="66" fill="url(#obj)"/>
+        <path d="M212 212 Q300 250 388 212" stroke="#fff" stroke-width="3" fill="none" opacity=".5"/>
+        <g stroke="#dff6ff" stroke-width="7" fill="none" stroke-linecap="round" opacity=".65">
+          <path d="M244 258 Q230 350 254 440"/><path d="M276 264 Q268 366 282 470"/>
+          <path d="M324 264 Q336 366 320 470"/><path d="M356 258 Q372 350 348 440"/>
+        </g>
+      </g>
+      <g fill="#fff" opacity=".3">
+        <circle cx="140" cy="150" r="7"/><circle cx="452" cy="112" r="5"/><circle cx="486" cy="330" r="9"/>
+        <circle cx="112" cy="392" r="4"/><circle cx="404" cy="474" r="5"/>
+      </g>
+      <path d="M0 0 H600 V600 H0Z" fill="url(#deep)"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity=".5" style="mix-blend-mode:overlay"/></svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="粉色星球飞行器"><defs><linearGradient id="bg" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#241235"/><stop offset="100%" stop-color="#6b3478"/></linearGradient><linearGradient id="obj" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#ff9ed2"/><stop offset="100%" stop-color="#ffd6ef"/></linearGradient><radialGradient id="light"><stop offset="0%" stop-color="#ffd6ef" stop-opacity="0.55"/><stop offset="100%" stop-color="#ffd6ef" stop-opacity="0"/></radialGradient><radialGradient id="halo"><stop offset="0%" stop-color="#241235" stop-opacity="0.9"/><stop offset="100%" stop-color="#241235" stop-opacity="0"/></radialGradient><radialGradient id="deep"><stop offset="0%" stop-color="#0b5c7a" stop-opacity="0"/><stop offset="100%" stop-color="#041a2e" stop-opacity=".75"/></radialGradient><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".14"/></feComponentTransfer></filter><filter id="soft"><feGaussianBlur stdDeviation="34"/></filter></defs><rect width="600" height="600" fill="url(#bg)"/><ellipse cx="140" cy="120" rx="230" ry="200" fill="url(#light)" opacity=".55" filter="url(#soft)"/><ellipse cx="500" cy="520" rx="230" ry="200" fill="url(#halo)" opacity=".5" filter="url(#soft)"/>
+      <circle cx="392" cy="214" r="126" fill="url(#obj)"/>
+      <ellipse cx="392" cy="214" rx="186" ry="40" fill="none" stroke="#ffd0e6" stroke-width="10" opacity=".45" transform="rotate(-18 392 214)"/>
+      <path d="M0 470 Q160 420 300 462 T600 440 V600 H0Z" fill="#20132f" opacity=".8"/>
+      <g transform="translate(150 300) rotate(-12)">
+        <path d="M0 30 L92 0 L150 30 L92 60Z" fill="#dfe9ff" opacity=".9"/>
+        <path d="M92 0 L92 60 L150 30Z" fill="#8fa8d8" opacity=".8"/>
+        <circle cx="42" cy="30" r="9" fill="#7ee6ff"/>
+        <path d="M0 30 L-52 12 L-52 48Z" fill="#ff9ed2" opacity=".8"/>
+      </g>
+      <g fill="#fff" opacity=".65">
+        <circle cx="90" cy="110" r="2.5"/><circle cx="212" cy="76" r="2"/><circle cx="510" cy="112" r="3"/>
+        <circle cx="548" cy="300" r="2"/><circle cx="72" cy="408" r="2"/><circle cx="470" cy="524" r="2"/>
+      </g>
+    <rect width="600" height="600" filter="url(#grain)" opacity=".5" style="mix-blend-mode:overlay"/></svg>

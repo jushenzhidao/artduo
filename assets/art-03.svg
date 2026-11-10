@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="极简耳机海报"><defs><linearGradient id="bg" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#171b23"/><stop offset="100%" stop-color="#3a4658"/></linearGradient><linearGradient id="obj" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#6d829e"/><stop offset="100%" stop-color="#b9c9e0"/></linearGradient><radialGradient id="light"><stop offset="0%" stop-color="#b9c9e0" stop-opacity="0.55"/><stop offset="100%" stop-color="#b9c9e0" stop-opacity="0"/></radialGradient><radialGradient id="halo"><stop offset="0%" stop-color="#171b23" stop-opacity="0.9"/><stop offset="100%" stop-color="#171b23" stop-opacity="0"/></radialGradient><radialGradient id="deep"><stop offset="0%" stop-color="#0b5c7a" stop-opacity="0"/><stop offset="100%" stop-color="#041a2e" stop-opacity=".75"/></radialGradient><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".14"/></feComponentTransfer></filter><filter id="soft"><feGaussianBlur stdDeviation="34"/></filter></defs><rect width="600" height="600" fill="url(#bg)"/><ellipse cx="140" cy="120" rx="230" ry="200" fill="url(#light)" opacity=".55" filter="url(#soft)"/><ellipse cx="500" cy="520" rx="230" ry="200" fill="url(#halo)" opacity=".5" filter="url(#soft)"/>
+      <g opacity=".93">
+        <path d="M170 336 V274 A130 130 0 0 1 430 274 V336" fill="none" stroke="url(#obj)" stroke-width="30" stroke-linecap="round"/>
+        <rect x="142" y="310" width="66" height="146" rx="30" fill="#15181e" stroke="#5d6674" stroke-width="3"/>
+        <rect x="392" y="310" width="66" height="146" rx="30" fill="#15181e" stroke="#5d6674" stroke-width="3"/>
+        <rect x="158" y="330" width="34" height="106" rx="17" fill="url(#obj)" opacity=".65"/>
+        <rect x="408" y="330" width="34" height="106" rx="17" fill="url(#obj)" opacity=".65"/>
+      </g>
+      <text x="300" y="132" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-weight="700" font-size="76" letter-spacing="10" fill="#e8edf5" opacity=".13">ZERO</text>
+      <text x="300" y="524" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="16" letter-spacing="9" fill="#c7d2e0" opacity=".6">SILENCE, REDEFINED</text>
+      <rect x="56" y="56" width="42" height="2" fill="#9ba9bb" opacity=".5"/>
+      <rect x="56" y="56" width="2" height="42" fill="#9ba9bb" opacity=".5"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity=".5" style="mix-blend-mode:overlay"/></svg>

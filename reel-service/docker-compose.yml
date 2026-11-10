@@ -1,0 +1,26 @@
+services:
+  reel:
+    build: .
+    image: reel-service:1.0.0
+    container_name: reel
+    restart: unless-stopped
+    # 只绑回环：公网入口一律走 nginx + *.1task.cn
+    ports:
+      - "127.0.0.1:39081:8080"
+    environment:
+      REEL_KEY: ${REEL_KEY:?REEL_KEY 必须在 .env 里}
+      REEL_PUBLIC_BASE: https://reel.1task.cn
+      REEL_ALLOW_HOSTS: "aivideomaker.1task.cn,reel.1task.cn"
+      REEL_WORKERS: "2"
+      REEL_MAX_SEG: "12"
+      REEL_TTL: "86400"
+      TZ: Asia/Shanghai
+    volumes:
+      - /opt/reel/data:/data
+    tmpfs:
+      - /tmp:size=2G
+    logging:
+      driver: json-file
+      options:
+        max-size: "20m"
+        max-file: "3"

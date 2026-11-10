@@ -1,5 +1,27 @@
-node_modules/
-dist/
-.DS_Store
-*.log
+# ---- 运行期生成内容（体积大、含用户作品，不入库）----
+assets/generated/
+assets/subjects/
+assets/_trash/
+
+# ---- 测试与截图产物 ----
 qa/
+
+# ---- 密钥 / 本地配置 ----
+.env
+.env.*
+!/.env.example
+*.db
+*.sqlite
+*.sqlite3
+runtime-config.json
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---- 日志与系统 ----
+*.log
+.DS_Store

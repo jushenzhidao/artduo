@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="文艺复兴猫咪"><defs><linearGradient id="bg" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#3a2a1c"/><stop offset="100%" stop-color="#8c5a35"/></linearGradient><linearGradient id="obj" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f5c65a"/><stop offset="100%" stop-color="#ffe6b0"/></linearGradient><radialGradient id="light"><stop offset="0%" stop-color="#ffe6b0" stop-opacity="0.55"/><stop offset="100%" stop-color="#ffe6b0" stop-opacity="0"/></radialGradient><radialGradient id="halo"><stop offset="0%" stop-color="#3a2a1c" stop-opacity="0.9"/><stop offset="100%" stop-color="#3a2a1c" stop-opacity="0"/></radialGradient><radialGradient id="deep"><stop offset="0%" stop-color="#0b5c7a" stop-opacity="0"/><stop offset="100%" stop-color="#041a2e" stop-opacity=".75"/></radialGradient><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".14"/></feComponentTransfer></filter><filter id="soft"><feGaussianBlur stdDeviation="34"/></filter></defs><rect width="600" height="600" fill="url(#bg)"/><ellipse cx="140" cy="120" rx="230" ry="200" fill="url(#light)" opacity=".55" filter="url(#soft)"/><ellipse cx="500" cy="520" rx="230" ry="200" fill="url(#halo)" opacity=".5" filter="url(#soft)"/>
+      <path d="M168 600 Q168 382 300 382 Q432 382 432 600Z" fill="url(#obj)"/>
+      <path d="M196 262 L188 148 L262 208 Q300 194 338 208 L412 148 L404 262 Q420 330 300 350 Q180 330 196 262Z" fill="#2b2320"/>
+      <ellipse cx="300" cy="286" rx="104" ry="88" fill="#3b302a"/>
+      <ellipse cx="256" cy="272" rx="15" ry="21" fill="#f5c65a"/>
+      <ellipse cx="344" cy="272" rx="15" ry="21" fill="#f5c65a"/>
+      <path d="M256 262 V282 M344 262 V282" stroke="#231c18" stroke-width="5"/>
+      <path d="M288 316 L312 316 L300 328Z" fill="#e79c9c"/>
+      <path d="M300 330 Q284 344 268 336 M300 330 Q316 344 332 336" stroke="#e8d8c8" stroke-width="3" fill="none"/>
+      <g stroke="#e8d8c8" stroke-width="2" opacity=".7" fill="none">
+        <path d="M212 300 L148 286 M212 314 L146 316 M388 300 L452 286 M388 314 L454 316"/>
+      </g>
+      <path d="M300 350 Q212 396 208 600 H392 Q388 396 300 350Z" fill="#8d5b3f" opacity=".55"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity=".5" style="mix-blend-mode:overlay"/></svg>

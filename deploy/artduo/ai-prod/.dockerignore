@@ -1,0 +1,12 @@
+# 构建上下文里排除：运行期数据、测试、密钥、文档、部署脚本
+assets/generated
+assets/subjects
+assets/_trash
+qa
+tools
+reel-service
+deploy
+__pycache__
+*.md
+*.log
+.DS_Store

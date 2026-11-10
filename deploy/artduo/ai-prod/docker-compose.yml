@@ -1,0 +1,26 @@
+services:
+  artduo:
+    build:
+      context: ./app
+    image: artduo:1.0.0
+    container_name: artduo
+    restart: unless-stopped
+    # 只绑回环：公网入口一律走 nginx + *.1task.cn
+    ports:
+      - "127.0.0.1:39210:8080"
+    env_file:
+      - .env
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - ./data/generated:/app/assets/generated
+      - ./data/subjects:/app/assets/subjects
+      - ./data/trash:/app/assets/_trash
+      - ./data/qa:/app/qa
+    tmpfs:
+      - /tmp:size=1G
+    logging:
+      driver: json-file
+      options:
+        max-size: "20m"
+        max-file: "3"

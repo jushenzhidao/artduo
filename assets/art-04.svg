@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="日系青春短片"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#9fc4a6"/><stop offset="100%" stop-color="#3d7356"/></linearGradient><linearGradient id="obj" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#bfe3c4"/><stop offset="100%" stop-color="#f6ffd9"/></linearGradient><radialGradient id="light"><stop offset="0%" stop-color="#f6ffd9" stop-opacity="0.55"/><stop offset="100%" stop-color="#f6ffd9" stop-opacity="0"/></radialGradient><radialGradient id="halo"><stop offset="0%" stop-color="#9fc4a6" stop-opacity="0.9"/><stop offset="100%" stop-color="#9fc4a6" stop-opacity="0"/></radialGradient><radialGradient id="deep"><stop offset="0%" stop-color="#0b5c7a" stop-opacity="0"/><stop offset="100%" stop-color="#041a2e" stop-opacity=".75"/></radialGradient><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".14"/></feComponentTransfer></filter><filter id="soft"><feGaussianBlur stdDeviation="34"/></filter></defs><rect width="600" height="600" fill="url(#bg)"/><ellipse cx="140" cy="120" rx="230" ry="200" fill="url(#light)" opacity=".55" filter="url(#soft)"/><ellipse cx="500" cy="520" rx="230" ry="200" fill="url(#halo)" opacity=".5" filter="url(#soft)"/>
+      <path d="M0 330 Q150 296 300 322 T600 306 V600 H0Z" fill="#5d8a68" opacity=".55"/>
+      <path d="M0 386 Q160 350 300 380 T600 366 V600 H0Z" fill="#3f6b4f" opacity=".7"/>
+      <path d="M0 462 Q180 420 340 456 T600 442 V600 H0Z" fill="#2f5540" opacity=".85"/>
+      <g opacity=".95">
+        <circle cx="316" cy="292" r="22" fill="#f0d6bd"/>
+        <path d="M292 286 Q300 258 328 268 L344 276 Q326 276 292 292Z" fill="#2f3b44"/>
+        <path d="M316 314 Q286 326 274 420 L356 420 Q344 326 316 314Z" fill="#e8eef2"/>
+        <path d="M274 420 Q268 486 262 560 L300 560 L312 420Z" fill="#46566a"/>
+        <path d="M356 420 Q362 486 368 560 L330 560 L320 420Z" fill="#46566a"/>
+        <path d="M274 344 Q236 366 226 400" stroke="#f0d6bd" stroke-width="13" fill="none" stroke-linecap="round"/>
+        <path d="M356 344 Q392 358 404 392" stroke="#f0d6bd" stroke-width="13" fill="none" stroke-linecap="round"/>
+      </g>
+      <circle cx="118" cy="132" r="62" fill="url(#light)" opacity=".7"/>
+      <path d="M0 210 Q120 190 240 214" stroke="#fff" stroke-width="2" opacity=".18" fill="none"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity=".5" style="mix-blend-mode:overlay"/></svg>
