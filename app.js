@@ -12,7 +12,7 @@
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-  const ART = (n) => `assets/art-${String(n).padStart(2, '0')}.svg`;
+  const ART = (n) => `assets/art-${String(n).padStart(2, '0')}.webp`;
   const RATIOS = ['1:1', '2:3', '3:4', '4:5', '9:16', '3:1', '3:2', '4:3', '5:4', '16:9', '21:9', '1:2'];
   const TYPES = [
     { id: 'image', label: '图片生成', icon: 'image' },
@@ -1000,7 +1000,7 @@
       closePopover();
       const n = 1 + (state.refs.length % 12);
       // 示例图是本机 SVG：必须走同一条压缩链路，否则它不是 data URI、代理会拒
-      addRefs([() => urlToRef(ART(n), `示例参考 ${n}.svg`)]);
+      addRefs([() => urlToRef(ART(n), `示例参考 ${n}.webp`)]);
     };
   }
 
@@ -1012,7 +1012,7 @@
       { id: 's2', title: '日系青春短片', mode: 'video', model: '即梦 Seedance 2.0 mini', prompt: '日系青春短片，夏日草地上穿白衬衫的少女逆风奔跑，清新柔光，胶片颗粒', params: ['视频生成', '即梦 Seedance 2.0 mini', '16:9 1080P', '5s'], images: [{ url: ART(4), source: 'demo', video: true, duration: 5 }], at: now - 7200e3 },
       { id: 's3', title: '极简耳机海报', mode: 'image', model: '图片美学模型 V8.2', prompt: '黑灰极简耳机产品海报，悬浮的哑光金属头戴耳机，毛玻璃 UI 元素', params: ['图片生成', '图片美学模型 V8.2', '1:1 2K超高', '4 张'], images: [3, 8, 9, 12].map((n) => ({ url: ART(n), source: 'demo' })), at: now - 86400e3 },
     ];
-    state.assets = Array.from({ length: 12 }, (_, i) => ({ url: ART(i + 1), name: ['商品图场景合成', '镜面珠宝人像', '极简耳机海报', '日系青春短片', '高燃汉堡宣传', '时尚换装快切', '月光下的花园', '东方极简', '赛博城市夜景', '水母在海底遨游', '文艺复兴猫咪', '粉色星球飞行器'][i], type: i === 3 || i === 4 || i === 5 ? 'video' : 'image', fav: i === 1 || i === 9 }));
+    state.assets = Array.from({ length: 12 }, (_, i) => ({ url: ART(i + 1), name: ['琥珀香水商业摄影', '镜面珠宝人像', '极简陶瓷器物', '晨雾远山湖泊', '火星探测器概念图', '时尚人像海报', '风暴灯塔电影感', '东方极简茶席', '雨夜霓虹街巷', '深蓝水母与体积光', '窗台橘猫午后', '雨夜车库电影分镜'][i], type: 'image', fav: i === 1 || i === 9 }));
   }
   function renderSessions() {
     const html = `<button class="session-new session-item" id="sessNew" type="button">${ico('plus')}<span>新对话</span></button>` +
@@ -1020,7 +1020,7 @@
         ${s.images && s.images.length
           ? (s.images[0].video && isVideoFile(s.images[0].url)
             ? `<span class="thumb thumb-video" aria-hidden="true">${ico('play')}</span>`
-            : `<img class="thumb" src="${esc(s.images[0].url)}" alt="">`)
+            : `<img class="thumb" src="${esc(s.images[0].url)}" alt="" loading="lazy" decoding="async" fetchpriority="low">`)
           : `<span class="thumb thumb-empty" aria-hidden="true">${ico(s.error ? 'warn' : 'image')}</span>`}<span class="label">${esc(s.title)}</span>
         <button class="sess-more" data-del="${s.id}" aria-label="删除对话">${ico('close')}</button></div>`).join('');
     $('#sessionList').innerHTML = html;
@@ -1066,7 +1066,7 @@
     return `<div class="result-card ${img.video ? 'wide' : ''}${playable ? ' is-video-file' : ''}" data-i="${i}" tabindex="0">
       ${playable
         ? `<video src="${esc(img.url)}" controls playsinline preload="metadata"></video>`
-        : `<img src="${esc(img.url)}" alt="生成结果 ${i + 1}" loading="lazy">`}
+        : `<img src="${esc(img.url)}" alt="生成结果 ${i + 1}" loading="eager" fetchpriority="high" decoding="async">`}
       <span class="source-tag ${img.source === 'real' ? 'real' : img.source === 'mock' ? 'mock' : ''}">${srcLabel}</span>
       ${img.video && !playable ? `<span class="duration-badge">${img.duration || 5}s</span><span class="video-play">${ico('play')}</span>` : ''}
       <div class="result-overlay">
@@ -1116,7 +1116,7 @@
             : running ? '任务已提交到 aivideomaker，正在轮询状态；右上「停止等待」只停本页轮询，不取消上游任务。'
             : s.source === 'real' ? (isVideo
                 ? '成片由 aivideomaker 的 minimaxH3 真实生成，已转存到 assets/generated/。'
-                : '图片由 bfl.1task.cn 的 flux-3-image 真实生成，已落盘到 assets/generated/。')
+                : '图片由flux-3-image 真实生成，已落盘到 assets/generated/。')
               : s.source === 'mock' ? '结果由本地 MOCK 上游生成：完整走完 HTTP 链路并落盘，但未访问计费网关、未产生任何费用。'
                 : '本地占位视觉，用于界面复刻演示；未发起任何生成请求。'}${!s.error && !running && isVideo && s.source === 'demo' ? ' 视频为静态封面占位，不代表真实视频产物。' : ''}</p>
         </div>
@@ -1460,7 +1460,7 @@
     const last = [...jobList()].reverse().find((j) => j.session);
     if (!last) return '任务已提交，结果会自动追加到这一段里。';
     const src = last.session.source;
-    if (src === 'real') return '图片由 bfl.1task.cn 的 flux-3-image 真实生成，已落盘到 assets/generated/。';
+    if (src === 'real') return '图片由flux-3-image 真实生成，已落盘到 assets/generated/。';
     if (src === 'mock') return '结果由本地 MOCK 上游生成（零计费）：完整走完 HTTP 链路并落盘，但未访问计费网关、未产生任何费用。';
     return '本地占位视觉，用于界面复刻演示；未发起任何生成请求。';
   }
@@ -2084,6 +2084,51 @@
       if (!files.length) return;
       await addRefs(files.map((f) => () => fileToRef(f)));
     };
+
+    /* ---------- 粘贴图片：截图 / 复制的图片 Ctrl+V 直接进参考图托盘 ----------
+     * 原来只做了「选文件」上传，输入框粘贴图片会被浏览器直接忽略。
+     * 复用 fileToRef + addRefs，保证与上传走同一条压缩、上限 10 张、渲染链路。
+     * 纯文本粘贴不拦截；只在创作输入区生效，弹窗内不抢粘贴。 */
+    function clipboardImageFiles(e) {
+      const dt = e.clipboardData;
+      if (!dt) return [];
+      const out = [];
+      const extOf = (t) => (t === 'image/jpeg' ? 'jpg' : (t.split('/')[1] || 'png').replace('svg+xml', 'svg'));
+      const named = (f, type) => {
+        const safeType = type.startsWith('image/') ? type : 'image/png';
+        // 剪贴板截图常常没有文件名；未知 MIME 统一按 PNG 兜底，避免 fileToRef 直接拒收
+        return new File([f], f.name || `粘贴图片 ${out.length + 1}.${extOf(safeType)}`, { type: safeType });
+      };
+      for (const it of Array.from(dt.items || [])) {
+        if (it.kind !== 'file') continue;
+        const f = it.getAsFile();
+        if (!f) continue;
+        const type = it.type || f.type || '';
+        if (type && !type.startsWith('image/')) continue;   // 明确不是图片就跳过
+        out.push(named(f, type));
+      }
+      // 个别浏览器只给 files 不给 items
+      if (!out.length) {
+        for (const f of Array.from(dt.files || [])) {
+          const type = f.type || '';
+          if (type && !type.startsWith('image/')) continue;
+          out.push(named(f, type));
+        }
+      }
+      return out;
+    }
+    const composerEl = $('#composer');
+    document.addEventListener('paste', async (e) => {
+      const focused = document.activeElement;
+      const inComposer = composerEl.contains(e.target) || composerEl.contains(focused)
+        || focused === $('#prompt');
+      const modal = $('#configModal');
+      if (!inComposer || (modal && !modal.hidden)) return;
+      const files = clipboardImageFiles(e);
+      if (!files.length) return;      // 纯文本 / 链接：照常粘进 textarea
+      e.preventDefault();             // 否则二进制内容或文件名会混进提示词
+      await addRefs(files.map((f) => () => fileToRef(f)));
+    });
 
     $('#collapseBtn').onclick = () => { $('#app').classList.add('is-collapsed'); renderModeGlider(); };
     $('#expandBtn').onclick = () => { $('#app').classList.remove('is-collapsed'); renderModeGlider(); };
